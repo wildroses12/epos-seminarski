@@ -1,19 +1,34 @@
- 
+// Navbar.js
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
-function Navbar() {
+function Navbar({ currentUser, logoutUser }) {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logoutUser();
+    navigate('/');
+  };
+
   return (
     <nav className="navbar">
       <h2 className="logo">Modna Oaza</h2>
       <ul className="nav-links">
         <li><Link to="/">Početna</Link></li>
         <li><Link to="/contact">Kontakt</Link></li>
-        <li><Link to="/login">Prijava</Link></li>
-        <li><Link to="/register">Registruj se</Link></li>
-
+        {currentUser ? (
+          <>
+            <li className="welcome-msg">Dobrodošli, {currentUser.username}</li>
+            <li><button className="logout-btn" onClick={handleLogout}>Odjavi se</button></li>
+          </>
+        ) : (
+          <>
+            <li><Link to="/login">Prijava</Link></li>
+            <li><Link to="/register">Registracija</Link></li>
+          </>
+        )}
       </ul>
     </nav>
   );

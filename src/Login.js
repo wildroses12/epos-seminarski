@@ -3,18 +3,22 @@ import React, { useState } from 'react';
 import './ContactForm.css';  
 import { useNavigate } from 'react-router-dom';
 
-function Login({ addUser }) {
+function Login({ loginUser }) {
   const [username, setUsername] = useState('wildroses12');
   const [password, setPassword] = useState('wildroses12');
-    let navigate= useNavigate();
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newUser = { username, password };
-    addUser(newUser);
-    // Resetiranje forme
-    setUsername('');
-    setPassword('');
-    navigate("/proizvodi")
+    const success = loginUser(username, password);
+    if (success) {
+      // Resetiranje forme
+      setUsername('');
+      setPassword('');
+      navigate('/proizvodi'); 
+    } else {
+      alert('Neispravno korisničko ime ili lozinka.');
+    }
   };
 
   return (
