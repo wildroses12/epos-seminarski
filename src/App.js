@@ -6,6 +6,44 @@ import ContactForm from './ContactForm';
 import Navbar from './Navbar';
 import Login from './Login';
 import Register from './Register';
+import ProductList from './ProductList';
+const products = [
+  {
+    id: 1,
+    name: 'Svečana haljina',
+    description: 'Elegantna crna haljina za posebne prilike.',
+    price: '120.00',
+    image: 'https://i.imgur.com/1.jpg', // Zamijenite sa pravim URL-ovima
+  },
+  {
+    id: 2,
+    name: 'Kožna jakna',
+    description: 'Moderna kožna jakna od prave kože.',
+    price: '250.00',
+    image: 'https://i.imgur.com/2.jpg',
+  },
+  {
+    id: 3,
+    name: 'Farmerke',
+    description: 'Udobne i moderne farmerke slim fit kroja.',
+    price: '80.00',
+    image: 'https://i.imgur.com/3.jpg',
+  },
+  {
+    id: 4,
+    name: 'Sportske patike',
+    description: 'Lagane patike idealne za trčanje i trening.',
+    price: '95.00',
+    image: 'https://i.imgur.com/4.jpg',
+  },
+  {
+    id: 5,
+    name: 'Sunčane naočare',
+    description: 'Stilske sunčane naočare sa UV zaštitom.',
+    price: '60.00',
+    image: 'https://i.imgur.com/5.jpg',
+  },
+];
 
 function App() {
   const [messages, setMessages] = useState(() => {
@@ -77,6 +115,7 @@ function App() {
             path="/register"
             element={<Register addUser={addUser} />}
           />
+           <Route path="/proizvodi" element={<ProductList products={products} />} />  
         </Routes>
       </div>
     </BrowserRouter>
