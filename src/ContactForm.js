@@ -12,7 +12,7 @@ function ContactForm({ addMessage }) {
     e.preventDefault();
     const newMessage = { name, email, message };
     addMessage(newMessage);
-    // Resetiranje forme
+ 
     setName('');
     setEmail('');
     setMessage('');
