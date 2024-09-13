@@ -12,6 +12,7 @@ function Navbar() {
         <li><Link to="/">Početna</Link></li>
         <li><Link to="/contact">Kontakt</Link></li>
         <li><Link to="/login">Prijava</Link></li>
+        <li><Link to="/register">Registruj se</Link></li>
 
       </ul>
     </nav>

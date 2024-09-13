@@ -1,4 +1,4 @@
- 
+// App.js
 
 import React, { useState, useEffect } from 'react';
 import './App.css';
@@ -6,7 +6,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './HomePage';
 import ContactForm from './ContactForm';
 import Navbar from './Navbar';
-import Login from './Login';  
+import Login from './Login';
+import Register from './Register';  // Uvozimo komponentu za registraciju
 
 function App() {
   const [messages, setMessages] = useState(() => {
@@ -43,6 +44,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/contact" element={<ContactForm addMessage={addMessage} />} />
           <Route path="/login" element={<Login addUser={addUser} />} />
+          <Route path="/register" element={<Register addUser={addUser} />} />
         </Routes>
       </div>
     </BrowserRouter>

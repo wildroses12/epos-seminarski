@@ -3,24 +3,26 @@ import React, { useState } from 'react';
 import './ContactForm.css';  
 import { useNavigate } from 'react-router-dom';
 
-function Login({ addUser }) {
-  const [username, setUsername] = useState('wildroses12');
-  const [password, setPassword] = useState('wildroses12');
-    let navigate= useNavigate();
+function Register({ addUser }) {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  let navigate= useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newUser = { username, password };
+    const newUser = { username, password, email };
     addUser(newUser);
     // Resetiranje forme
     setUsername('');
     setPassword('');
-    navigate("/proizvodi")
+    setEmail('');
+    navigate("/login")
   };
 
   return (
     <div className="contact-form-section">
       <div className="form-container">
-        <h2>Prijavite se</h2>
+        <h2>Registracija</h2>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -30,17 +32,24 @@ function Login({ addUser }) {
             required
           />
           <input
+            type="email"
+            placeholder="Email adresa"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
             type="password"
             placeholder="Lozinka"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <button type="submit">Prijava</button>
+          <button type="submit">Registriraj se</button>
         </form>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default Register;
