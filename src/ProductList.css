@@ -83,5 +83,33 @@
   
   .product-card .buy-btn:hover {
     background-color: #e03e5b;
+  }/* ProductList.css */
+
+/* ... postojeći stilovi ... */
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    gap: 20px;
   }
+  
+  .controls input[type="text"] {
+    padding: 10px 15px;
+    font-size: 1em;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    outline: none;
+  }
+  
+  .controls select {
+    padding: 10px 15px;
+    font-size: 1em;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    outline: none;
+  }
+  
   

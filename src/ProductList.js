@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ProductList.css';
 
-function ProductList({ products }) {
+function ProductList({ products, addToCart }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOption, setSortOption] = useState('');
 
@@ -51,7 +51,9 @@ function ProductList({ products }) {
             <h3>{product.name}</h3>
             <p>{product.description}</p>
             <p className="price">{product.price} €</p>
-            <button className="buy-btn">Kupi</button>
+            <button className="buy-btn" onClick={() => addToCart(product)}>
+              Dodaj u korpu
+            </button>
           </div>
         ))}
       </div>

@@ -1,10 +1,8 @@
-// Navbar.js
-
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
-function Navbar({ currentUser, logoutUser }) {
+function Navbar({ currentUser, logoutUser, cartItemCount }) {
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -17,7 +15,9 @@ function Navbar({ currentUser, logoutUser }) {
       <h2 className="logo">Modna Oaza</h2>
       <ul className="nav-links">
         <li><Link to="/">Početna</Link></li>
+        <li><Link to="/proizvodi">Proizvodi</Link></li>
         <li><Link to="/contact">Kontakt</Link></li>
+        <li><Link to="/korpa">Korpa </Link></li> 
         {currentUser ? (
           <>
             <li className="welcome-msg">Dobrodošli, {currentUser.username}</li>
