@@ -1,11 +1,18 @@
  
 
 .contact-form-section {
-    background-image: url('https://theglamandglitter.com/wp-content/uploads/2024/01/SS24-Trends.jpg'); /* Zamijenite s URL-om vaše slike */
+ 
+    background-image: url('https://theglamandglitter.com/wp-content/uploads/2024/01/SS24-Trends.jpg');
     background-size: cover;
     background-position: center;
+    color: #fff;
+    padding: 0 20px;
     position: relative;
-    padding: 80px 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   
   .contact-form-section::after {

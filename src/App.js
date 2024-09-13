@@ -2,8 +2,10 @@
 
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './HomePage';
 import ContactForm from './ContactForm';
+import Navbar from './Navbar';
 
 function App() {
   const [messages, setMessages] = useState(() => {
@@ -22,10 +24,15 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <HomePage />
-      <ContactForm addMessage={addMessage} />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+      <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/contact" element={<ContactForm addMessage={addMessage} />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
