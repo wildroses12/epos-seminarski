@@ -11,6 +11,8 @@ function Navbar() {
       <ul className="nav-links">
         <li><Link to="/">Početna</Link></li>
         <li><Link to="/contact">Kontakt</Link></li>
+        <li><Link to="/login">Prijava</Link></li>
+
       </ul>
     </nav>
   );
